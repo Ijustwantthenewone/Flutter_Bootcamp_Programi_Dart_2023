@@ -3,5 +3,30 @@ class Araba{
   double hiz;
   bool calisiyormu;
 
-  Araba(this.renk, this.hiz, this.calisiyormu);//21:02
+  Araba({required this.renk,required this.hiz,required this.calisiyormu});
+  //Constructor
+
+  void calistir(){
+    calisiyormu = true;
+    hiz = 5;
+  }
+  void durdur(){
+    calisiyormu = false;
+    hiz = 0;
+  }
+  void hizlan(int kacKm){
+      hiz += kacKm;
+  }
+
+  void yavasla(int kacKm){
+    hiz -= kacKm;
+  }
+
+
+
+  void bilgiAl(){
+     print("Rengi $renk");
+     print("Hız $hiz");
+     print("Çalışıyor mu ? $calisiyormu");
+  }
 }
