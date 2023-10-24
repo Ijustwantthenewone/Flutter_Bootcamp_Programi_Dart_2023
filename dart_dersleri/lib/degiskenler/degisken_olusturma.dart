@@ -11,11 +11,11 @@ void main() {
   print(ogrenciBasharf);
   print(ogrenciDevamEdiyormu);
 
-  int urun_id = 13;
-  String urun_adi = "Kol saati";
-  int urun_adeti = 100;
-  double urun_fiyati = 149.99;
-  String urun_tedarikci = "Rolex";
+  int urunId = 13;
+  String urunAdi = "Kol saati";
+  int urunAdeti = 100;
+  double urunFiyati = 149.99;
+  String urunTedarikci = "Rolex";
   
   /*print("Ürünün id    : $urun_id");
   print("Ürünün adı   : $urun_adi");

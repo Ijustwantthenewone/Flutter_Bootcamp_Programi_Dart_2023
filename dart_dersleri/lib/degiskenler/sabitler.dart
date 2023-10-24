@@ -7,7 +7,7 @@ void main(){
    print(sayi);
 
    //final run ettiğimizde hafızada oluşur.
-   final int x = 300;
+   const int x = 300;
    print(x);
    //x = 400;
 
