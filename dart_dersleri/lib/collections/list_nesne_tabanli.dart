@@ -1,4 +1,5 @@
 import 'package:dart_dersleri/collections/ogrenciler.dart';
+import 'package:flutter/cupertino.dart';
 
 void main(){
   var o1 = Ogrenciler(no: 3, ad: "Mehmet", sinif: "9c");
@@ -14,24 +15,26 @@ void main(){
     print("No ${x.no} Name ${x.ad} sinif ${x.sinif}");
   }
 
+  Iterable<Ogrenciler> f1 = ogrencilerListesi.where((filtre) {
+    return filtre.no > 2;
+  });
 
-  print("---------------------------");
-  //sorting
-  Comparator<Ogrenciler> m1 = (a, b) => b.no.compareTo(a.no);
-  ogrencilerListesi.sort(m1);
+  var sonuc = f1.toList();
 
-  for(var x in ogrencilerListesi){
-    print("No ${x.no} Name ${x.ad} sinif ${x.sinif}");
+  for (var x in sonuc){
+    print("${x.no} ${x.ad} ${x.sinif}");
+  }
+  print("----");
+
+  Iterable<Ogrenciler> f2 = ogrencilerListesi.where((filtre) {
+    return filtre.ad.contains("e");
+  });
+
+  var sonuc1 = f2.toList();
+
+  for (var x in sonuc1){
+    print("${x.no} ${x.ad} ${x.sinif}");
   }
 
-  Comparator<Ogrenciler> y1 = (a, b) => a.ad.compareTo(b.ad);
-  ogrencilerListesi.sort(y1);
 
-  for(var x in ogrencilerListesi){
-    print("No ${x.no} Name ${x.ad} sinif ${x.sinif}");
-  }
-
-  //filtreleme
-
-  12:21
 }
