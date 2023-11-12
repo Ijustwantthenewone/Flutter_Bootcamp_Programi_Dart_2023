@@ -13,5 +13,5 @@ Future<String> gelenVeri() async {
       },
     );
   }
-  return Future.delayed(Duration(seconds: 3),() => "Selam",);
+  return Future.delayed(const Duration(seconds: 3),() => "Selam",);
 }

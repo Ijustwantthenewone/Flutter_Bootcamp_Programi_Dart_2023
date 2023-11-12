@@ -1,5 +1,4 @@
 import 'package:dart_dersleri/collections/ogrenciler.dart';
-import 'package:flutter/cupertino.dart';
 
 void main(){
   var o1 = Ogrenciler(no: 3, ad: "Mehmet", sinif: "9c");
