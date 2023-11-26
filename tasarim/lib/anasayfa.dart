@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasarim/renkler.dart';
 
 class Anasayfa extends StatefulWidget {
   const Anasayfa({super.key,});
@@ -12,16 +13,29 @@ class _AnasayfaState extends State<Anasayfa> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(centerTitle: true,
-        title: const Text("Pizza"),
+        title:  Text("Pizza",style: TextStyle(color: renk2,fontFamily: "benimfontum",fontSize: 50)),
+        backgroundColor: renk1,
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Merhaba Flutter",style: TextStyle(fontSize: 50)),
-          ],
-        ),
-      ),
+      body: Row(//10:21
+        // main exende cross dikeyse yatay yataysa dikey
+        children: [
+          Container(
+            width: 111,
+            height: 111,
+            color: Colors.red,
+          ),
+          Container(
+            width: 80,
+            height: 80,
+            color: Colors.green,
+          ),
+          Container(
+            width: 70,
+            height: 70,
+            color: Colors.limeAccent,
+          )
+        ],
+      )
     );
   }
 }
