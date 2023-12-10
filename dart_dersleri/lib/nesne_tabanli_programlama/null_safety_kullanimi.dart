@@ -6,10 +6,6 @@ void main(){
 
 
 
-  if(isim != null){
-    print(isim.toUpperCase());
-  }else{
-    print("Boş ileti");
-  }
+  print("Boş ileti");
   print(isim!.toUpperCase());
 }
