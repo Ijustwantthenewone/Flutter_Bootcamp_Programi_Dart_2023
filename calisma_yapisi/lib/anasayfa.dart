@@ -1,3 +1,4 @@
+import 'package:calisma_yapisi/oyun_ekrani.dart';
 import 'package:flutter/material.dart';
 
 class Anasayfa extends StatefulWidget {
@@ -25,9 +26,12 @@ class _AnasayfaState extends State<Anasayfa> {
             Text("Sonuç :$sayi"),
             ElevatedButton(onPressed: () {
               setState(() {
-                sayi-=1;
+                sayi+=1;
               });
-            }, child: const Text("Tıkla"))
+            }, child: const Text("Tıkla")),
+            ElevatedButton(onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Oyunekrani(),));
+            }, child: const Text("Başla"))
           ],
         ),
       ),
