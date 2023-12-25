@@ -30,7 +30,7 @@ class _AnasayfaState extends State<Anasayfa> {
               });
             }, child: const Text("Tıkla")),
             ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Oyunekrani(),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Oyunekrani(ad: 'Ahmet',boy: 1.75,yas: 24,bekar: false),));
             }, child: const Text("Başla"))
           ],
         ),
