@@ -1,3 +1,4 @@
+import 'package:calisma_yapisi/kisiler.dart';
 import 'package:calisma_yapisi/oyun_ekrani.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class _AnasayfaState extends State<Anasayfa> {
 
   @override
   Widget build(BuildContext context) {
+
     print("Build çalıştı");
     return Scaffold(
       appBar: AppBar(
@@ -23,14 +25,14 @@ class _AnasayfaState extends State<Anasayfa> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("Sonuç :$sayi"),
+            Text("Sonuç :$sayi"), //25:17
             ElevatedButton(onPressed: () {
               setState(() {
                 sayi+=1;
               });
             }, child: const Text("Tıkla")),
             ElevatedButton(onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Oyunekrani(ad: 'Ahmet',boy: 1.75,yas: 24,bekar: false),));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Oyunekrani(k1: Kisiler(ad: "ahmet", yas: 23, boy: 1.2, bekar: true),)));
             }, child: const Text("Başla"))
           ],
         ),
