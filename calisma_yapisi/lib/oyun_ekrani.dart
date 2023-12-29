@@ -35,7 +35,7 @@ class _OyunekraniState extends State<Oyunekrani> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("${widget.k1.ad} ${widget.k1.yas} ${widget.k1.boy} ${widget.k1.bekar}"), //23:18
+              Text("${widget.k1.ad} ${widget.k1.yas} ${widget.k1.boy} ${widget.k1.bekar}"),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
