@@ -20,6 +20,11 @@ class _AnasayfaState extends State<Anasayfa> {
     super.initState();
   }
 
+   Future<int> toplama(int sayi1,int sayi2)async{
+      return sayi1 + sayi2;
+   }
+
+
   @override
   Widget build(BuildContext context) {
     print("Build çalıştı");
@@ -45,7 +50,8 @@ class _AnasayfaState extends State<Anasayfa> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Oyunekrani(
+                          builder: (context) =>
+                              Oyunekrani(
                                 k1: Kisiler(
                                     ad: "ahmet",
                                     yas: 23,
@@ -55,20 +61,37 @@ class _AnasayfaState extends State<Anasayfa> {
                     print("İts over");
                   });
                 },
-                child: const Text("")),
-            Text("Merhaba"),
-            Text("Merhaba"),
-            Text("Merhaba"),
-            ElevatedButton(onPressed: () {
-              setState(() { //1:51
-                
-              });
-            }, child: Text("Durum 1 (true)")),
+                child: const Text("Oyun ekranı")),
+            Visibility(visible: kontrol, child: const Text("Merhaba")),
+            Text(kontrol ? "Merhaba" : "!!!",
+              style: TextStyle(color: kontrol ? Colors.blue : Colors.red,),),
+            ((){
+              if(kontrol){
+                return Text("evet");
+              }else{
+                return Text("Hayır");
+              }
+            }()),
             ElevatedButton(onPressed: () {
               setState(() {
-
+                kontrol = true;
               });
-            }, child: Text("Durum 1 (false)"))
+            }, child: const Text("Durum 1 (true)")),
+            ElevatedButton(onPressed: () {
+              setState(() {
+                kontrol = false;
+              });
+            }, child: const Text("Durum 1 (false)")),
+            FutureBuilder<int>(future: toplama(13, -4), builder: (context, snapshot) {
+              if(snapshot.hasError){
+                return Text("HATA");
+              }else if(snapshot.hasData){
+                return Text("${snapshot.data}");
+              }else {
+                return Text("GG");
+              }
+            },)
+
           ],
         ),
       ),
