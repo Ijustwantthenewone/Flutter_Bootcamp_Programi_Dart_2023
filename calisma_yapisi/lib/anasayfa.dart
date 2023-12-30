@@ -11,11 +11,15 @@ class Anasayfa extends StatefulWidget {
 
 class _AnasayfaState extends State<Anasayfa> {
   int sayi = 0;
+  bool kontrol = false;
+
   @override
-  void initState() { //25:07
+  void initState() {
+    //25:07
     print("initState çalıştı.");
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     print("Build çalıştı");
@@ -47,9 +51,24 @@ class _AnasayfaState extends State<Anasayfa> {
                                     yas: 23,
                                     boy: 1.2,
                                     bekar: true),
-                              )));
+                              ))).then((value) {
+                    print("İts over");
+                  });
                 },
-                child: const Text("Başla"))
+                child: const Text("")),
+            Text("Merhaba"),
+            Text("Merhaba"),
+            Text("Merhaba"),
+            ElevatedButton(onPressed: () {
+              setState(() { //1:51
+                
+              });
+            }, child: Text("Durum 1 (true)")),
+            ElevatedButton(onPressed: () {
+              setState(() {
+
+              });
+            }, child: Text("Durum 1 (false)"))
           ],
         ),
       ),
