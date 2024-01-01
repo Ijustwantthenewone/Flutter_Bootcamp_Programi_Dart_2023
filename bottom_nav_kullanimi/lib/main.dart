@@ -1,5 +1,6 @@
 
 import 'package:bottom_nav_kullanimi/BottomNavigationPage.dart';
+import 'package:bottom_nav_kullanimi/kullanici%20etkilesimi.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) { //18:23
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurpleAccent),useMaterial3: true),
-      home: BottomNavigationPage(),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),useMaterial3: true),
+      home: const kullaniciEtkilesimi(),
     );
   }
 }

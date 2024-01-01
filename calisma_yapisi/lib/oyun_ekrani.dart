@@ -1,11 +1,10 @@
 import 'package:calisma_yapisi/kisiler.dart';
 import 'package:calisma_yapisi/sonuc_ekrani.dart';
 import 'package:flutter/material.dart';
-import 'kisiler.dart';
 
 class Oyunekrani extends StatefulWidget {
   Kisiler k1;
-  Oyunekrani({required this.k1});
+  Oyunekrani({super.key, required this.k1});
 
   @override
   State<Oyunekrani> createState() => _OyunekraniState();

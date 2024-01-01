@@ -67,9 +67,9 @@ class _AnasayfaState extends State<Anasayfa> {
               style: TextStyle(color: kontrol ? Colors.blue : Colors.red,),),
             ((){
               if(kontrol){
-                return Text("evet");
+                return const Text("evet");
               }else{
-                return Text("Hayır");
+                return const Text("Hayır");
               }
             }()),
             ElevatedButton(onPressed: () {
@@ -84,11 +84,11 @@ class _AnasayfaState extends State<Anasayfa> {
             }, child: const Text("Durum 1 (false)")),
             FutureBuilder<int>(future: toplama(13, -4), builder: (context, snapshot) {
               if(snapshot.hasError){
-                return Text("HATA");
+                return const Text("HATA");
               }else if(snapshot.hasData){
                 return Text("${snapshot.data}");
               }else {
-                return Text("GG");
+                return const Text("GG");
               }
             },)
 
