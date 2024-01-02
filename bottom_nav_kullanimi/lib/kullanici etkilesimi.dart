@@ -94,7 +94,7 @@ class _kullaniciEtkilesimiState extends State<kullaniciEtkilesimi> {
                         actions: [
                           ElevatedButton(
                               onPressed: () {
-                                print("Girilen değer ${yaziKontrolcu.text}"); //15:00
+                                print("Girilen değer ${yaziKontrolcu.text}"); //16:24
                                 Navigator.pop(context);
                                 yaziKontrolcu.text = "";
                               },
