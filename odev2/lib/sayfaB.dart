@@ -9,6 +9,7 @@ class sayfaB extends StatefulWidget{
 }
 
 class _sayfaBState extends State<sayfaB> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,7 @@ class _sayfaBState extends State<sayfaB> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(onPressed: () {
-Navigator.push(context, MaterialPageRoute(builder: (context) => sayfaY(),));
+Navigator.push(context, MaterialPageRoute(builder: (context) => const sayfaY(),));
             }, child: const Text("Git Y")),
           ],
         ),
