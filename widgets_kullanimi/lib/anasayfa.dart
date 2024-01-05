@@ -16,6 +16,9 @@ class _anaSayfaState extends State<anaSayfa> {
   int radioDeger = 0;
   bool progress = false;
   double slider = 0.0;
+  var saaticin = TextEditingController();
+  var gunicin = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +104,7 @@ class _anaSayfaState extends State<anaSayfa> {
                   height: 100,
                   width: 200,
                   child: RadioListTile(
-                    title: Text("İstanbul"),
+                    title: const Text("İstanbul"),
                     value: 3,
                     groupValue: radioDeger,
                     onChanged: (value) {
@@ -116,7 +119,7 @@ class _anaSayfaState extends State<anaSayfa> {
                   height: 100,
                   width: 150,
                   child: RadioListTile(
-                    title: Text("Ankara"),
+                    title: const Text("Ankara"),
                     value: 1,
                     groupValue: radioDeger,
                     onChanged: (value) {
@@ -141,7 +144,7 @@ class _anaSayfaState extends State<anaSayfa> {
                     child: const Text("Başla")),
                 Visibility(
                   visible: progress,
-                  child: CircularProgressIndicator(
+                  child: const CircularProgressIndicator(
 
                     color: Colors.black,
                   ),
@@ -162,13 +165,44 @@ class _anaSayfaState extends State<anaSayfa> {
               });
             },),
             Text("${slider.toInt()}"),
+             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  width: 120,
+                  height: 50,
+                  child: TextField(
+                    controller: saaticin,
+                    decoration: const InputDecoration(hintText: "Saat"),
+                    keyboardType: TextInputType.number,
+                    obscureText: true,
+                  ),
+                ),
+                IconButton(onPressed: () {
+                  showTimePicker(context: context, initialTime: TimeOfDay.fromDateTime(DateTime.now())); //24
+                }, icon: const Icon(Icons.access_time_filled_rounded)),
+                SizedBox(
+                  width: 120,
+                  height: 50,
+                  child: TextField(
+                    controller: gunicin,
+                    decoration: const InputDecoration(hintText: "Tarih"),
+                    keyboardType: TextInputType.number,
+                    obscureText: true,
+                  ),
+                ),
+                IconButton(onPressed: () {
+                  
+                }, icon: const Icon(Icons.date_range_outlined)),
 
+              ],
+            ),
             ElevatedButton(
                 onPressed: () {
                   print(
                       "Switch'in durumu $switchControl Checkbox'ın durumu $checkBoxControl"); //20:25
                 },
-                child: Text("Göster"))
+                child: const Text("Göster"))
           ],
         ),
       ),
