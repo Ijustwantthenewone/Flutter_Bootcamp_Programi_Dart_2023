@@ -28,12 +28,13 @@ class anasayfa extends StatefulWidget {
 class _anasayfaState extends State<anasayfa> {
 
   String islem = "0";
+  String ayrisma = "";
   var kontrolcu = TextEditingController();
   
 
   @override
   Widget build(BuildContext context) {
-
+  ayrisma = islem.split("222").toString();
 
     return Scaffold(
       body: Center(
@@ -49,6 +50,7 @@ class _anasayfaState extends State<anasayfa> {
                       setState(() {
                         islem = islem + "0";
                         print(islem);
+                        print(ayrisma);
                       });
                     },
                     child: Text("0")),
