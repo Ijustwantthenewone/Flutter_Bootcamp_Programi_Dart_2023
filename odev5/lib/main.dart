@@ -27,46 +27,52 @@ class anasayfa extends StatefulWidget {
 
 class _anasayfaState extends State<anasayfa> {
 
-  String islem = "0";
-  String ayrisma = "";
-  var kontrolcu = TextEditingController();
-  
+  String toplam = "0";
+  List<String> ayiklanmishali = [];
+  int? toplamlari = 0;
+  String sonuc = "";
+
+
 
   @override
   Widget build(BuildContext context) {
-  ayrisma = islem.split("222").toString();
+    final ayiklanmishali = toplam.split("+");
+    print(ayiklanmishali);
+
+
+
 
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(islem, style: TextStyle(fontSize: 30)),
+            Text(toplam, style: TextStyle(fontSize: 30)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "0";
-                        print(islem);
-                        print(ayrisma);
+                        toplam = toplam + "0";
+
+
                       });
                     },
                     child: Text("0")),
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "1";
-                        print(islem);
+                        toplam = toplam + "1";
+
                       });
                     },
                     child: Text("1")),
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "2";
-                        print(islem);
+                        toplam = toplam + "2";
+
                       });
                     },
                     child: Text("2")),
@@ -81,8 +87,8 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "3";
-                        print(islem);
+                        toplam = toplam + "3";
+
                         setState(() {});
                       });
                     },
@@ -90,8 +96,8 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "4";
-                        print(islem);
+                        toplam = toplam + "4";
+
                         setState(() {});
                       });
                     },
@@ -99,8 +105,8 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "5";
-                        print(islem);
+                        toplam = toplam + "5";
+
                         setState(() {});
                       });
                     },
@@ -116,8 +122,8 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "6";
-                        print(islem);
+                        toplam = toplam + "6";
+
                         setState(() {});
                       });
                     },
@@ -125,8 +131,8 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "7";
-                        print(islem);
+                        toplam = toplam + "7";
+
                         setState(() {});
                       });
                     },
@@ -134,8 +140,8 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "8";
-                        print(islem);
+                        toplam = toplam + "8";
+
                         setState(() {});
                       });
                     },
@@ -143,19 +149,35 @@ class _anasayfaState extends State<anasayfa> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        islem = islem + "9";
-                        print(islem);
+                        toplam = toplam + "9";
+
                         setState(() {});
                       });
                     },
                     child: Text("9"))
               ],
             ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(minimumSize: Size(100, 100)),
+                onPressed: () {
+                  setState(() {
+                    toplam = toplam + "+";
+
+                    setState(() {});
+                  });
+                },
+                child: Text("+")),
 
             ElevatedButton(
                 style: ElevatedButton.styleFrom(minimumSize: Size(100, 100)),
                 onPressed: () {
+                  setState(() {
+                    toplamlari = ayiklanmishali.fold(0, (x, t) => x!+int.parse(t));
+                    toplam = toplamlari.toString();
+                    print(toplamlari);
+                  });
 
+                  
                 },
                 child: Text("Topla")),
             SizedBox(
@@ -165,7 +187,7 @@ class _anasayfaState extends State<anasayfa> {
                 style: ElevatedButton.styleFrom(minimumSize: Size(100, 100)),
                 onPressed: () {
                   setState(() {
-                    islem = "0";
+                    toplam = "0";
                   });
                 },
                 child: Text("Sıfırla"))
